@@ -1,0 +1,40 @@
+.link {
+	position: relative;
+	color: var(--light-color);
+	transition-property: color, opacity, translate;
+	transition-duration: 0.25s, 0.15s, 0.15s;
+
+	&:hover {
+		color: var(--accent-color);
+	}
+
+	&:active {
+		opacity: 0.8;
+		translate: 0 2px;
+	}
+
+	&::after {
+		content: "";
+
+		position: absolute;
+		left: 0;
+		bottom: -4px;
+
+		width: 0;
+		height: 2px;
+		background-color: var(--accent-color);
+		border-radius: 2px;
+
+		transition: width 0.25s;
+	}
+
+	&.active {
+		color: var(--light-color);
+		opacity: 1;
+		translate: none;
+
+		&::after {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,139 @@
+// Модальное окно
+.modal {
+	width: 90%;
+	height: 90%;
+	padding: 25px;
+	background-color: var(--light-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+}
+
+// Заголовок модального окна
+.heading {
+	font-size: 1.65rem;
+	font-family: var(--prosto-font);
+	font-weight: bold;
+	color: var(--accent-color);
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+// Форма создания нового упражнения
+.form {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+// Обёртка для упрощения позиционирования
+.wrapper {
+	padding-right: 10px;
+	overflow-y: scroll;
+	height: auto;
+
+	display: grid;
+	grid-template-columns: 1.25fr 1fr 2fr;
+	gap: 0 20px;
+}
+
+//
+.basic-fields {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	input,
+	select,
+	textarea {
+		transition: 0.25s border-color;
+
+		&:focus {
+			border-color: var(--accent-color);
+		}
+
+		&:invalid {
+			border-color: salmon;
+		}
+	}
+}
+
+// Заголовок поля формы
+.label {
+	margin: 10px 0 5px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: var(--accent-color);
+}
+
+// Ошибка поля ввода
+.field-error {
+	color: salmon;
+}
+
+// Поле выбора параметра упражнения
+.parameter-select {
+	width: 100%;
+	border: 2px solid var(--dark-color);
+	border-radius: 3px;
+	padding: 2px;
+	outline: none;
+}
+
+// Поля ввода описания упражнения
+.description-input {
+	width: 100%;
+	max-height: 20vh;
+	min-height: 3rem;
+	resize: vertical;
+	overflow-y: scroll;
+	border: 2px solid var(--dark-color);
+	border-radius: 3px;
+	padding: 2px;
+	outline: none;
+}
+
+// Глобальная ошибка
+.global-error {
+	color: salmon;
+	margin-top: 10px;
+}
+
+/* Адаптив */
+
+@media (max-width: 1024px) {
+	.modal {
+		width: 100%;
+		height: 100%;
+	}
+
+	.heading {
+		line-height: 1;
+	}
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		width: 80%;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.wrapper {
+		width: 100%;
+	}
+
+	.description-input {
+		height: 20vh;
+	}
+}
+
+@media (max-width: 420px) {
+	.form button[type="submit"] {
+		width: 100%;
+	}
+}

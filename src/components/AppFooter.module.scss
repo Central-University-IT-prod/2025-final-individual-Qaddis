@@ -1,0 +1,48 @@
+// Секция футера
+.footer {
+	width: 100%;
+	padding: 50px 25px 25px;
+	background-color: var(--dark-color);
+	position: relative;
+	z-index: 11;
+}
+
+// Ограничитель содержимого по ширине
+.wrapper {
+	max-width: 1140px;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 25px;
+}
+
+// Меню навигации
+.nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 10px 0;
+}
+
+// Разделитель между ссылками навигации
+.separator {
+	margin: 0 10px;
+	color: var(--gray-color);
+}
+
+// Копирайт
+.copyright {
+	color: var(--light-color);
+	text-align: center;
+}
+
+/* Адаптив */
+
+@media (max-width: 420px) {
+	.separator {
+		margin: 0 5px;
+	}
+}

@@ -1,0 +1,52 @@
+// Список этапов инструкции
+.list {
+	list-style-position: inside;
+	overflow-y: scroll;
+	max-height: 40vh;
+
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+// Этап инструкции
+.stage {
+	line-height: 1;
+
+	&::marker {
+		color: var(--accent-color);
+	}
+}
+
+// Сообщение об отсутствии этапов инструкции
+.no-content {
+	color: var(--gray-color);
+	opacity: 0.75;
+}
+
+// Форма добавления нового этапа инструкции
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+// Кнопка формы добавления нового этапа инструкции
+.button {
+	font-size: 1rem;
+}
+
+// Ошибка
+.error {
+	margin-top: 5px;
+	color: salmon;
+}
+
+/* Адаптив */
+
+@media (max-width: 1024px) {
+	.list {
+		overflow-y: visible;
+	}
+}

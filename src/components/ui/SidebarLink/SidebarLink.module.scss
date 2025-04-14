@@ -1,0 +1,63 @@
+.link {
+	display: flex;
+	align-items: center;
+	padding: 3px 10px;
+	border-radius: 10px;
+	transition: 0.25s background-color;
+
+	svg,
+	.text {
+		color: var(--light-color);
+
+		transition-property: color, opacity;
+		transition-duration: 0.25s, 0.15s;
+	}
+
+	&.active {
+		background-color: var(--gray-color);
+
+		svg,
+		.text {
+			color: var(--light-color) !important;
+			opacity: 1 !important;
+		}
+	}
+}
+
+.text {
+	display: grid;
+	overflow-x: hidden;
+
+	div {
+		min-width: 0;
+	}
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	.link {
+		&:hover {
+			svg,
+			.text {
+				color: var(--accent-color);
+			}
+		}
+
+		&:active {
+			svg,
+			.text {
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+@media (hover: none) {
+	.link:active {
+		svg,
+		.text {
+			color: var(--accent-color);
+		}
+	}
+}

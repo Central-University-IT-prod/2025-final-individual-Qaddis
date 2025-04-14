@@ -1,0 +1,119 @@
+// Название упражнения
+.title {
+	font-size: 1.35rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 15px;
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+// Обёртка для упрощения позиционирования
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+// Заголовок раздела
+.heading {
+	font-size: 1.15rem;
+	font-weight: bold;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+}
+
+// Цель
+.goal {
+	font-size: 1.2rem;
+	text-align: center;
+	font-weight: 500;
+	margin-bottom: 5px;
+	line-height: 1;
+
+	span {
+		color: var(--accent-color);
+		font-weight: normal;
+	}
+}
+
+// Кнопки (Выполнено/Пропустить)
+.buttons {
+	display: flex;
+	justify-content: center;
+	gap: 10px 20px;
+	margin-top: 20px;
+}
+
+// Инструкция к упражнению
+.instruction {
+	&-stages {
+		display: flex;
+		flex-direction: column;
+		gap: 7.5px;
+		list-style-position: inside;
+	}
+
+	&-stage {
+		line-height: 1;
+
+		&::marker {
+			color: var(--accent-color);
+		}
+	}
+
+	&-link {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+
+		width: fit-content;
+		padding: 5px 15px;
+		border: 1px solid var(--accent-color);
+		border-radius: 3px;
+		color: var(--accent-color);
+		line-height: 1;
+		margin-top: 10px;
+
+		transition-property: background-color, color, opacity;
+	}
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	.instruction-link {
+		transition-duration: 0.25s, 0.25s, 0.15s;
+
+		&:hover {
+			background-color: var(--accent-color);
+			color: var(--light-color);
+		}
+
+		&:active {
+			opacity: 0.75;
+		}
+	}
+}
+
+@media (hover: none) {
+	.instruction-link {
+		transition-duration: 0.15s, 0.15s, 0.15s;
+
+		&:active {
+			background-color: var(--accent-color);
+			color: var(--light-color);
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.buttons {
+		flex-direction: column;
+	}
+}

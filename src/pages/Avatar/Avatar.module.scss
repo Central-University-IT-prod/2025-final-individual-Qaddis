@@ -1,0 +1,91 @@
+// Обёртка для упрощения позиционирования
+.content {
+	width: 65%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin: 0 auto;
+}
+
+// Контейнер для первых разделов
+.first-section {
+	display: flex;
+	gap: 20px;
+}
+
+// Форма с параметрами пользователя
+.user-data {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.8);
+}
+
+// Заголовок раздела
+.heading {
+	font-size: 1.35rem;
+	font-weight: bold;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+}
+
+// Ошибка
+.error {
+	margin-top: 5px;
+	color: salmon;
+}
+
+// Поле выбора уровня опыта пользователя
+.select {
+	border: 3px solid var(--accent-color);
+	border-radius: 3px;
+	padding: 3px;
+	color: var(--light-color);
+	transition: color 0.25s;
+	outline: none;
+
+	&:focus {
+		color: var(--accent-color);
+	}
+}
+
+// Кнопка "Сохранить"
+.submit-btn {
+	margin-top: 25px;
+}
+
+// Кнопка сброса данных
+.reset-btn {
+	margin-top: 15px;
+}
+
+// Напоминание о том, что пользователь не указал свои параметры
+.reminder {
+	margin-top: 25px;
+	color: salmon;
+	text-align: center;
+}
+
+/* Адаптив */
+
+@media (max-width: 1024px) {
+	.content {
+		width: 100%;
+	}
+}
+
+@media (max-width: 625px) {
+	.first-section {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	.user-data {
+		width: 100%;
+	}
+}

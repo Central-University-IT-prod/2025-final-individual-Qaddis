@@ -1,0 +1,97 @@
+// Карточка секции добавления упражнения
+.card {
+	width: 100%;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.6);
+}
+
+// Поисковик упражнения
+.exercise-search {
+	position: relative;
+	width: 100%;
+}
+
+// Список подсказок
+.hints {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 3;
+
+	width: 100%;
+	padding: 3px;
+	background-color: var(--dark-color);
+	border: 3px solid var(--accent-color);
+	border-top: none;
+
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+// Подсказка
+.hint {
+	color: var(--light-color);
+
+	&__btn {
+		text-align: start;
+		width: 100%;
+		padding: 1px;
+	}
+}
+
+// Название выбранного упражнения
+.choice {
+	margin-top: 10px;
+	color: var(--light-color);
+	text-align: center;
+	line-height: 1;
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+// Кнопка добавления выбранного упражнения в план тренировки
+.save-btn {
+	width: 50%;
+	margin-top: 20px;
+}
+
+// Ошибка
+.error {
+	margin-top: 5px;
+	color: salmon;
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	.hint__btn {
+		&:hover {
+			background-color: var(--gray-color);
+		}
+	}
+}
+
+@media (hover: none) {
+	.hint__btn {
+		&:active {
+			background-color: var(--gray-color);
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.card {
+		padding: 10px;
+	}
+}

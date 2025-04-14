@@ -1,0 +1,159 @@
+// Карточка аватара пользователя
+.user-card {
+	width: fit-content;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.8);
+}
+
+// Аватар
+.user-avatar {
+	position: relative;
+	max-width: 300px;
+	z-index: 2;
+}
+
+// Фон аватара
+.background {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+// Изображение автара
+.avatar {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	translate: -50% 0;
+	width: 75%;
+}
+
+// Информация о уровне пользователя
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 20px;
+}
+
+//
+.level {
+	font-weight: 500;
+	color: var(--light-color);
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+// Прогрессбар до нового уровня
+.progress-bar {
+	width: 100%;
+	height: 12px;
+	background-color: var(--gray-color);
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.track {
+	height: 100%;
+	background-color: var(--accent-color);
+}
+
+// Прогресс до нового уровня (в числах)
+.progress {
+	color: var(--light-color);
+	text-align: end;
+
+	span {
+		color: var(--gray-color);
+	}
+}
+
+// Рамки (Декорация аватара)
+.default-frame {
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+}
+
+.glowing-frame,
+.neon-frame,
+.rgb-frame {
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+		z-index: -1;
+
+		width: calc(100% + 6px);
+		height: calc(100% + 6px);
+		border-radius: 5px;
+	}
+
+	&::before {
+		filter: blur(7.5px);
+		opacity: 0.75;
+	}
+}
+
+.glowing-frame {
+	&::after,
+	&::before {
+		background-color: var(--accent-color);
+	}
+}
+
+.neon-frame {
+	&::after,
+	&::before {
+		background: conic-gradient(
+			from var(--angle),
+			#cc6699,
+			transparent 5%,
+			#3abcfa 45%,
+			transparent 55%,
+			#cc6699 95%
+		);
+		animation: 3s spin linear infinite;
+	}
+}
+
+.rgb-frame {
+	&::after,
+	&::before {
+		background: conic-gradient(
+			from var(--angle),
+			#ff4545,
+			#00ff99,
+			#006aff,
+			#ff0095,
+			#ff4545
+		);
+		animation: 3s spin linear infinite;
+	}
+}
+
+@property --angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+@keyframes spin {
+	from {
+		--angle: 0deg;
+	}
+
+	to {
+		--angle: 360deg;
+	}
+}
+
+// Анимация вращения бордера: https://www.youtube.com/watch?v=ezP4kbOvs_E

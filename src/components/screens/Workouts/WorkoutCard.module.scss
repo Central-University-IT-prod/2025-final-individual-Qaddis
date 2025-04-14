@@ -1,0 +1,134 @@
+// Карточка тренировки
+.workout-card {
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.8);
+}
+
+// Основная часть
+.main {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0 20px;
+}
+
+// Блок с информацией
+.information,
+// Блок с кнопками
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+// Название тренировки
+.title {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: var(--accent-color);
+	line-height: 1;
+}
+
+// Описание тренировки
+.description {
+	color: var(--light-color);
+}
+
+// Кнопка для управления состоянием отображения плана тренировки
+.show_more-btn {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	margin-top: 10px;
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+// План тренировки
+.exercises {
+	margin-top: 10px;
+	display: grid;
+	overflow: hidden;
+}
+
+// Список упражнений
+.exercises__list {
+	min-height: 0%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	list-style-position: inside;
+}
+
+// Этап плана тренировки
+.stage {
+	color: var(--light-color);
+
+	&::marker {
+		color: var(--accent-color);
+	}
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+// Ссылка на подробную информацию об упражнении
+.exercise-link {
+	text-decoration: underline;
+	display: inline;
+	text-wrap: wrap;
+	text-align: start;
+}
+
+// Блок с кнопками (мобильное устройство)
+.mobile-buttons {
+	display: none;
+	flex-direction: column;
+	gap: 5px;
+	margin-top: 15px;
+}
+
+/* Адаптив */
+
+@media (max-width: 535px) {
+	.buttons {
+		display: none;
+	}
+
+	.show_more-btn {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.mobile-buttons {
+		display: flex;
+
+		button {
+			font-size: 1rem;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.exercises__list {
+		gap: 10px;
+	}
+
+	.stage {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		b {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+// Меню с фильтрами
+.panel {
+	width: 100%;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 15px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.8);
+}
+
+// Форма фильтров
+.form {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	gap: 0 25px;
+}
+
+// Контейнер для полей ввода
+.fields,
+// Контейнер для кнопок
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px 0;
+}
+
+// Обёртка для упрощения позиционирования
+.row {
+	display: flex;
+	align-items: center;
+	gap: 5px 15px;
+}
+
+// Ошибка фильтра
+.filter-error {
+	color: salmon;
+	margin-top: 10px;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+	}
+
+	.buttons {
+		flex-direction: row;
+		gap: 0 15px;
+
+		button {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.row {
+		flex-direction: column;
+	}
+}

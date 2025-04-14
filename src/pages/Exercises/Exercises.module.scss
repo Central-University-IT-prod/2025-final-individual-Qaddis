@@ -1,0 +1,125 @@
+// Страница
+.page {
+	position: relative;
+}
+
+// Контейнер с карточками упражнений
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	width: fit-content;
+	margin: 0 auto;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+// Кнопка добавления нового упражнения
+.new_exercise-btn {
+	margin-top: 10px;
+	display: inline;
+	position: sticky;
+	z-index: 3;
+	left: calc(100% - 25px);
+	bottom: 25px;
+	color: var(--accent-color);
+
+	transition-property: opacity, translate;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
+
+		width: 50%;
+		height: 50%;
+		border-radius: 50%;
+		background-color: var(--light-color);
+	}
+
+	svg {
+		width: 3.2rem;
+		height: auto;
+	}
+}
+
+// Подсказка в самом низу страницы
+.bottom-hint {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	text-align: end;
+	color: var(--gray-color);
+
+	svg {
+		width: 1.65rem;
+		height: auto;
+		rotate: 90deg;
+	}
+}
+
+// Контейнер с сообщением об отсутствии упражнений
+.no-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	&__heading {
+		font-size: 1.35rem;
+		font-weight: bold;
+		color: var(--gray-color);
+		margin: 20px 0 10px;
+	}
+
+	&__hint {
+		color: var(--gray-color);
+	}
+
+	&__button {
+		text-decoration: underline;
+		color: var(--accent-color);
+	}
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	.new_exercise-btn {
+		transition-duration: 0.25s, 0.15s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		&:active {
+			translate: 0 2px;
+		}
+	}
+}
+
+@media (hover: none) {
+	.new_exercise-btn {
+		transition-duration: 0.15s, 0.15s;
+
+		&:active {
+			opacity: 0.8;
+
+			translate: 0 2px;
+		}
+	}
+}
+
+@media (max-width: 920px) {
+	.cards-container {
+		padding: 10px;
+	}
+}

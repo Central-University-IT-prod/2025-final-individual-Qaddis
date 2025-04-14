@@ -1,0 +1,80 @@
+// Список тэгов
+.tags-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+
+	min-height: 2rem;
+	padding: 10px;
+	border: 2px dashed var(--dark-color);
+	border-radius: 10px;
+	border-bottom: none;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+// Тэг
+.tag {
+	display: flex;
+	align-items: center;
+	gap: 0 5px;
+
+	width: fit-content;
+	padding: 0 10px;
+	background-color: var(--accent-color);
+	border-radius: 3px;
+	color: var(--light-color);
+
+	&__btn {
+		width: 0.75rem;
+		height: auto;
+	}
+}
+
+// Сообщение об отсутствии тэгов
+.no-content {
+	color: var(--gray-color);
+	opacity: 0.75;
+}
+
+// Форма добавления тэга
+.form {
+	display: flex;
+}
+
+// Поле ввода тэга
+.input {
+	width: 100%;
+	padding: 5px;
+	border: 2px solid var(--dark-color);
+	border-bottom-left-radius: 10px;
+	border-right: none;
+	outline: none;
+
+	transition: 0.25s border-color;
+
+	&:focus {
+		border-color: var(--accent-color);
+	}
+}
+
+// Кнопка добавления тэга
+.add-btn {
+	padding: 5px 15px;
+	border: 2px solid var(--accent-color);
+	background-color: var(--accent-color);
+	border-bottom-right-radius: 10px;
+	color: var(--light-color);
+
+	transition: 0.15s opacity;
+
+	&:active {
+		opacity: 0.8;
+	}
+}
+
+// Ошибка
+.error {
+	color: salmon;
+	margin-top: 5px;
+}

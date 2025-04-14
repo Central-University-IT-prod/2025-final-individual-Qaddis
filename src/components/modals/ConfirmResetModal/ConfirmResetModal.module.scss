@@ -1,0 +1,63 @@
+// Модальное окно
+.modal {
+	width: 60%;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+	padding: 25px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 25px;
+}
+
+// Заголовок модального окна
+.heading {
+	font-size: 1.35rem;
+	font-weight: bold;
+	color: var(--accent-color);
+	text-align: center;
+	line-height: 1;
+}
+
+// Предупреждение о последствиях сброса данных
+.warning {
+	color: var(--light-color);
+	text-align: center;
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+// Кнопки (Да/Нет)
+.buttons {
+	width: 50%;
+	display: flex;
+	gap: 15px 25px;
+
+	button {
+		width: 100%;
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 1024px) {
+	.buttons {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.modal {
+		width: 100%;
+	}
+}
+
+@media (max-width: 425px) {
+	.buttons {
+		flex-direction: column;
+	}
+}

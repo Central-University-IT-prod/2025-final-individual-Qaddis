@@ -1,0 +1,45 @@
+// Прогресс тренировки
+.progress-menu {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 25px;
+}
+
+// Визуализация этапа тренировки (упражнение)
+.exercise {
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 50%;
+}
+
+// Визуализация этапа тренировки (перерыв)
+.break {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+}
+
+// Состояния этапов тренировки
+
+// Ещё не выполнено
+.waiting {
+	background-color: var(--gray-color);
+}
+
+// Пропущено
+.missed {
+	background-color: lightsalmon;
+}
+
+// Выполнено
+.done {
+	background-color: lightgreen;
+}
+
+// Активно
+.active {
+	outline: 3px solid var(--accent-color);
+	outline-offset: 3px;
+}

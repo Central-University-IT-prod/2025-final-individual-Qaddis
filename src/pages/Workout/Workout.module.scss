@@ -1,0 +1,8 @@
+// Страница
+.page,
+// Блок с сообщением о том, что страница не найдена
+.not-found {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

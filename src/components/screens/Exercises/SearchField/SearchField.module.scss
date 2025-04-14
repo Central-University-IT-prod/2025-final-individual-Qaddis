@@ -1,0 +1,44 @@
+// Поле ввода с списком подсказок
+.field-with-hint {
+	width: 100%;
+	position: relative;
+}
+
+// Список подсказок для автодополнения
+.hints-list {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 3;
+
+	display: block;
+	width: 100%;
+	height: auto;
+	background-color: var(--dark-color);
+	border: 3px solid var(--accent-color);
+	border-top: none;
+}
+
+// Подсказка (автодополнение)
+.hint__btn {
+	text-align: start;
+	color: var(--light-color);
+	padding: 3px 6px;
+
+	width: 100%;
+	height: 100%;
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	.hint__btn:hover {
+		background-color: var(--gray-color);
+	}
+}
+
+@media (hover: none) {
+	.hint__btn:active {
+		background-color: var(--gray-color);
+	}
+}

@@ -1,0 +1,222 @@
+// Форма создания новой тренировки
+.form {
+	width: 65%;
+	margin: 0 auto;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	label {
+		align-self: flex-start;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+// Напоминание пользователю о том, что он не указал свои параметры
+.reminder {
+	width: 65%;
+	margin: 0 auto;
+	border: 2px dashed salmon;
+	border-radius: 15px;
+	padding: 10px;
+	margin-bottom: 25px;
+
+	.warning {
+		text-align: center;
+		line-height: 1;
+		margin-bottom: 5px;
+	}
+
+	.hint {
+		text-align: center;
+		line-height: 1;
+
+		button {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Поле ввода описания тренировки
+.description {
+	width: 100%;
+	min-height: 3rem;
+	max-height: 15vh;
+	resize: vertical;
+
+	padding: 3px;
+	border: 2px solid var(--dark-color);
+	border-radius: 3px;
+	transition: 0.25s border-color;
+
+	&:focus {
+		border-color: var(--accent-color);
+	}
+}
+
+// Описание раздела
+.label {
+	display: inline-block;
+	margin: 10px 0 5px;
+	font-size: 1.1rem;
+	font-weight: bold;
+	color: var(--accent-color);
+	align-self: flex-start;
+}
+
+// Ошибка
+.error {
+	display: inline-block;
+	align-self: flex-start;
+	color: salmon;
+}
+
+// План тренировки
+.exercises {
+	width: 100%;
+	border: 2px dashed var(--gray-color);
+	border-radius: 10px;
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+// Список добавленных упражнений
+.stages {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+// Этап плана тренировки
+.stage {
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.6);
+
+	&-content {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__fields {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		width: fit-content;
+		color: var(--accent-color);
+		font-weight: bold;
+		font-size: 1.15rem;
+		margin-bottom: 5px;
+		text-align: left;
+		text-decoration: underline;
+		line-height: 1;
+	}
+
+	label {
+		color: var(--accent-color);
+		margin-top: 5px;
+	}
+
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&-errors {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		margin-top: 10px;
+		color: salmon;
+	}
+}
+
+// Разделитель
+.separator {
+	border: none;
+	border-bottom: 2px dashed var(--gray-color);
+}
+
+// Кнопка добавления упражнения
+.add_exercise-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+// Глобальная ошибка
+.global-error {
+	margin-top: 10px;
+	color: salmon;
+	text-align: center;
+	line-height: 1;
+}
+
+// Кнопки сохранения/запуска новой тренировки
+.submit-buttons {
+	width: 100%;
+	display: flex;
+	gap: 10px 15px;
+	margin-top: 25px;
+
+	button {
+		width: 100%;
+	}
+}
+
+// Кнопка сброса формы
+.reset-btn {
+	width: 100%;
+	margin-top: 15px;
+}
+
+/* Адаптив */
+
+@media (max-width: 1024px) {
+	.form,
+	.reminder {
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	.submit-buttons {
+		flex-direction: column;
+	}
+
+	.reset-btn {
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 550px) {
+	.stage-content {
+		flex-direction: column;
+	}
+
+	.reminder .warning {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 425px) {
+	.form {
+		padding: 10px;
+	}
+}

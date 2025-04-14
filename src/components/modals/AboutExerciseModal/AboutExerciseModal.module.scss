@@ -1,0 +1,179 @@
+// Модальное окно
+.modal {
+	width: 80%;
+	background-color: var(--light-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+	padding: 25px;
+}
+
+// Заголовок модального окна
+.title {
+	font-size: clamp(1.35rem, 6vw, 1.8rem);
+	font-family: var(--prosto-font);
+	font-weight: bold;
+	color: var(--accent-color);
+	line-height: 1;
+	margin-bottom: 15px;
+}
+
+// Заголовок секций модального окна
+.heading {
+	font-size: 1.15rem;
+	font-weight: 500;
+	color: var(--accent-color);
+	margin-bottom: 2px;
+}
+
+// Сложность
+.difficulty {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+
+	&__label {
+		font-size: 1.15rem;
+		font-weight: 500;
+		color: var(--accent-color);
+		margin-right: 5px;
+	}
+}
+
+// Тэги и оборудование
+.tags,
+.equipment {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px 10px;
+	margin-bottom: 10px;
+}
+
+.tag,
+.equipment-item {
+	background-color: var(--accent-color);
+	padding: 2px 7px;
+	border-radius: 2.5px;
+	color: var(--light-color);
+}
+
+// Описание
+.description {
+	margin-bottom: 10px;
+}
+
+// Инструкция по выполнению
+.instruction {
+	list-style-position: inside;
+	margin-bottom: 10px;
+}
+
+.stage::marker {
+	color: var(--accent-color);
+}
+
+// Обёртка для упрощения позиционирования
+.row {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	gap: 0 25px;
+
+	&.one-child {
+		justify-content: flex-end;
+	}
+}
+
+// Ссылка на видеоинструкцию
+.video {
+	display: flex;
+	align-items: center;
+	gap: 0 5px;
+
+	width: fit-content;
+	padding: 2.5px 10px;
+	border: 1px solid var(--accent-color);
+	border-radius: 5px;
+	color: var(--accent-color);
+
+	transition-property: color, background-color, opacity, translate;
+}
+
+// Кнопка удаления упражнения
+.remove-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: flex-end;
+	flex-shrink: 0;
+	border-radius: 50%;
+	border: 1px solid var(--accent-color);
+	color: var(--accent-color);
+	padding: 3px;
+	position: relative;
+
+	transition-property: background-color, color, opacity, translate;
+
+	svg {
+		width: 1.6rem;
+		height: auto;
+	}
+}
+
+/* Адаптив */
+
+@media (hover: hover) {
+	// Ссылка на видеоинструкцию
+	.video,
+	// Кнопка удаления упражнения
+	.remove-btn {
+		transition-duration: 0.25s, 0.25s, 0.15s, 0.15s;
+
+		&:hover {
+			background-color: var(--accent-color);
+			color: var(--light-color);
+		}
+
+		&:active {
+			opacity: 0.8;
+			translate: 0 1.5px;
+		}
+	}
+}
+
+@media (hover: none) {
+	// Ссылка на видеоинструкцию
+	.video,
+	// Кнопка удаления упражнения
+	.remove-btn {
+		transition-duration: 0.15s, 0.15s, 0.15s, 0.15s;
+
+		&:active {
+			background-color: var(--accent-color);
+			color: var(--light-color);
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.modal {
+		width: 100%;
+		height: 100%;
+		overflow-y: scroll;
+	}
+}
+
+@media (max-width: 375px) {
+	.heading {
+		line-height: 1;
+	}
+
+	.row {
+		gap: 15px;
+	}
+
+	.video {
+		svg {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,36 @@
+// Экран перерыва
+.screen {
+	min-width: 50%;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+// Заголовок
+.title {
+	font-size: 1.35rem;
+	font-weight: bold;
+	text-align: center;
+
+	span {
+		color: var(--accent-color);
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+	.screen {
+		width: 100%;
+	}
+}
+
+@media (max-width: 425px) {
+	.screen {
+		padding: 10px;
+	}
+}

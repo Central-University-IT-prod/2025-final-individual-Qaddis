@@ -1,0 +1,92 @@
+// Карточка упражнения
+.card {
+	display: flex;
+	flex-direction: column;
+
+	width: 350px;
+	padding: 10px;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.8);
+}
+
+// Название упражнения
+.title {
+	font-size: 1.15rem;
+	line-height: 1;
+	color: var(--accent-color);
+	font-weight: bold;
+}
+
+// Сложность упражнения
+.difficulty {
+	display: flex;
+	align-items: center;
+	column-gap: 2.5px;
+	margin: 5px 0;
+
+	&__value,
+	&__icon {
+		color: var(--light-color);
+	}
+}
+
+// Список тэгов упражнения
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+	margin: 10px 0 15px;
+}
+
+// Тэг упражнения
+.tag {
+	color: var(--light-color);
+	background-color: var(--accent-color);
+	padding: 0 3px;
+	border-radius: 3px;
+}
+
+// Описание упражнения
+.description {
+	color: var(--light-color);
+}
+
+// Кнопки (Подробнее/Удалить)
+.buttons {
+	margin-top: auto;
+	display: flex;
+	column-gap: 15px;
+
+	button:first-child {
+		flex-grow: 1;
+	}
+
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 920px) {
+	.card {
+		width: 300px;
+	}
+}
+
+@media (max-width: 695px) {
+	.card {
+		width: 350px;
+	}
+}
+
+@media (max-width: 420px) {
+	.card {
+		width: 100%;
+	}
+}

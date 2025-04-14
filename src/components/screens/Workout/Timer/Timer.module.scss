@@ -1,0 +1,60 @@
+// Таймер
+.timer {
+	width: 100%;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 5px;
+	padding: 20px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.6);
+	color: var(--light-color);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+// Заголовок
+.heading {
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: var(--accent-color);
+}
+
+// Оставшееся время
+.time-left {
+	font-size: 1.15rem;
+}
+
+// Прогрессбар (оставшееся время)
+.progress-bar {
+	width: 100%;
+	height: 10px;
+	background-color: var(--gray-color);
+	margin-top: 10px;
+	overflow: hidden;
+	border-radius: 3px;
+}
+
+.progress {
+	height: 100%;
+	background-color: var(--accent-color);
+}
+
+// Кнопки для изменения оставшегося времени
+.buttons {
+	margin-top: 20px;
+	display: flex;
+	gap: 10px;
+}
+
+/* Адаптив */
+
+@media (max-width: 425px) {
+	.buttons {
+		width: 100%;
+
+		button {
+			flex-grow: 1;
+		}
+	}
+}

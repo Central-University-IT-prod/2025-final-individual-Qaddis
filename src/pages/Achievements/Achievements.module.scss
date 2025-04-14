@@ -1,0 +1,108 @@
+// Обёртка для упрощения позиционирования
+.content {
+	padding: 20px;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+}
+
+// Заголовок раздела
+.heading {
+	font-size: 1.25rem;
+	font-weight: bold;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+// Контейнер с карточками достижений
+.achievements {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	justify-content: center;
+
+	article {
+		box-shadow: 1.5px 1.5px 10px rgba($color: #000, $alpha: 0.6);
+	}
+}
+
+// Разделитель между разделами
+.separator {
+	bottom: none;
+	border-bottom: 2px dashed var(--gray-color);
+	margin: 20px 0;
+}
+
+// Сообщение об отсутствии достижений
+.no-achievements {
+	font-size: 1.15rem;
+	text-align: center;
+	color: var(--gray-color);
+}
+
+// Карточка неоткрытого достижения
+.locked-achievement {
+	display: flex;
+	gap: 10px;
+	padding: 20px;
+	background-color: var(--gray-color);
+	border-radius: 5px;
+
+	&__image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--accent-color);
+
+		svg {
+			width: 3rem;
+			height: auto;
+		}
+	}
+
+	&__info {
+		h4 {
+			font-weight: bold;
+			color: var(--accent-color);
+			margin-bottom: 5px;
+		}
+
+		p {
+			color: var(--light-color);
+			line-height: 1;
+		}
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+	.content {
+		padding: 10px;
+	}
+
+	.separator {
+		margin: 10px 0;
+	}
+}
+
+@media (max-width: 425px) {
+	.locked-achievement {
+		flex-direction: column;
+
+		&__info {
+			h4 {
+				font-weight: bold;
+				color: var(--accent-color);
+				text-align: center;
+				line-height: 1;
+				margin-bottom: 10px;
+			}
+
+			p {
+				color: var(--light-color);
+				text-align: center;
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+/* - Подготовка к стилизации - */
+
+/* Сброс дефолтных стилей */
+@use "reset";
+
+/* Переменные */
+@use "variables";
+
+/* Импорт шрифтов */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Prosto+One&family=Seymour+One&display=swap");
+
+/* - Стилизация - */
+
+/* Глобальные стили */
+html {
+	font-size: 18px;
+}
+
+body {
+	background-color: var(--light-color);
+	color: var(--black-color);
+	font-family: var(--inter-font);
+}
+
+.main {
+	min-height: 100vh;
+}
+
+.wrapper {
+	display: flex;
+	position: relative;
+}
+
+.content {
+	width: 100%;
+	margin-left: 120px;
+	padding: 25px;
+}
+
+/* Адаптив */
+
+@media (max-width: 768px) {
+	.content {
+		margin-left: 0;
+	}
+}

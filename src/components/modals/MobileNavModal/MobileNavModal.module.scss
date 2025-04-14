@@ -1,0 +1,40 @@
+// Модальное окно
+.modal {
+	width: 80%;
+	height: 60%;
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 10px;
+	padding: 20px 10px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+}
+
+// Заголовок модального окна
+.heading {
+	font-size: 1.1rem;
+	font-family: var(--prosto-font);
+	color: var(--accent-color);
+	font-weight: bold;
+	text-align: center;
+}
+
+// Меню навигации
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+/* Адаптив */
+
+@media (max-width: 420px) {
+	.modal {
+		width: 100%;
+	}
+}

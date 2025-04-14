@@ -1,0 +1,16 @@
+// Раздел с последним полученным достижением
+.last-achievement {
+	background-color: var(--dark-color);
+	border: 3px solid var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 1.5px 1.5px 10px rgba($color: #0000, $alpha: 0.6);
+}
+
+// Сообщение об отсутствии достижений
+.no-content {
+	font-size: clamp(1.15rem, 6rem, 1.35rem);
+	font-weight: bold;
+	color: var(--light-color);
+	text-align: center;
+}

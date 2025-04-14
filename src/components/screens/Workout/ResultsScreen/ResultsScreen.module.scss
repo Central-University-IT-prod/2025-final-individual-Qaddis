@@ -1,0 +1,61 @@
+// Экран результатов
+.screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 2px dashed var(--gray-color);
+	border-radius: 15px;
+	padding: 20px;
+
+	button {
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+
+// Заголовок
+.heading {
+	font-size: 1.35rem;
+	font-weight: bold;
+	text-align: center;
+	color: var(--accent-color);
+	margin-bottom: 15px;
+}
+
+// Статистика
+.stats {
+	list-style-type: disc;
+	list-style-position: inside;
+	margin-bottom: 10px;
+
+	// Пункт статистики
+	li {
+		span {
+			color: var(--accent-color);
+			font-weight: 500;
+		}
+
+		&::marker {
+			color: var(--accent-color);
+		}
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 450px) {
+	.screen {
+		padding: 10px;
+	}
+
+	.stats {
+		display: flex;
+		flex-direction: column;
+		gap: 7.5px;
+		list-style-type: none;
+
+		li {
+			line-height: 1;
+		}
+	}
+}

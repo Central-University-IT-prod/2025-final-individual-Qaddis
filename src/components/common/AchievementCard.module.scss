@@ -1,0 +1,76 @@
+// Карточка достижения
+.achievement {
+	display: flex;
+	gap: 10px;
+	background-color: var(--gray-color);
+	border-radius: 5px;
+	padding: 20px;
+}
+
+// Иконка достижения
+.image {
+	width: auto;
+	height: 6rem;
+}
+
+// Раздел с информацией о достижении
+.info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+// Название достижения
+.title {
+	font-size: 1.15rem;
+	font-weight: bold;
+	color: goldenrod;
+}
+
+// Описание достижения
+.description {
+	color: var(--light-color);
+}
+
+// Награда за достижение
+.reward {
+	display: flex;
+	align-items: center;
+	color: var(--light-color);
+
+	svg {
+		margin-left: 5px;
+		color: goldenrod;
+	}
+
+	span {
+		color: goldenrod;
+	}
+}
+
+/* Адаптив */
+
+@media (max-width: 425px) {
+	.achievement {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.image {
+		height: 3rem;
+	}
+
+	.info {
+		gap: 10px;
+	}
+
+	.title,
+	.description {
+		text-align: center;
+		line-height: 1;
+	}
+
+	.reward {
+		justify-content: center;
+	}
+}
